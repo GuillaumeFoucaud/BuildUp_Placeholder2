@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildUp Credit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #111111;
+      --lime: #C8FF00;
+      --white: #FFFFFF;
+      --surface: #1A1A1A;
+      --muted: #888888;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ────────────────────────────────────────── */
+    nav {
+      background-color: var(--lime);
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: #111111;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    /* ── MAIN ───────────────────────────────────────── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 5rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .stat {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .body-copy {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 3rem;
+      max-width: 560px;
+    }
+
+    /* ── AVAILABLE SOON BADGE ───────────────────────── */
+    .badge {
+      display: inline-block;
+      background-color: var(--surface);
+      border: 1px solid #2a2a2a;
+      border-left: 3px solid var(--lime);
+      padding: 0.625rem 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .badge span {
+      color: var(--lime);
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .contact {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .contact a {
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .contact a:hover {
+      color: var(--lime);
+      border-color: var(--lime);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 480px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+
+      main {
+        padding: 3.5rem 1.25rem 3rem;
+      }
+
+      .logo {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="logo">BuildUp Credit</span>
+  </nav>
+
+  <main>
+    <h1 class="stat">15 million adults in the UK have low financial resilience.</h1>
+    <p class="body-copy">BuildUp Credit solves that. Creating impact at scale.</p>
+    <div class="badge"><span>&#9632;</span>&nbsp; Available soon</div>
+  </main>
+
+  <footer>
+    <p class="contact">Get in touch: <a href="mailto:hello@buildupcredit.co.uk">hello@buildupcredit.co.uk</a></p>
+  </footer>
+
+</body>
+</html>
