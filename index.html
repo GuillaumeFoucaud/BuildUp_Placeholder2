@@ -13,30 +13,18 @@
   BUILDUP CREDIT — BRAND REFERENCE
   Theme: "Forward Architecture"
   ════════════════════════════════════════════════
-
   PALETTE
-  --midnight:   #0A1628   primary background
-  --navy:       #0D1F3C   secondary surface / hero
-  --blue:       #6EAEFF   accent — CTAs, highlights, key words
-  --blue-dim:   #1A9E7B   secondary accent (teal green for stats)
-  --light:      #E8EDF5   body text on dark
-  --muted:      rgba(232,237,245,0.55)  secondary text
+  --midnight: #0A1628   primary background
+  --navy:     #0D1F3C   secondary surface
+  --blue:     #6EAEFF   accent — key words, CTAs, stat numbers
+  --light:    #E8EDF5   body text on dark
+  --muted:    rgba(232,237,245,0.55) secondary text
+  --border:   rgba(110,174,255,0.15)
 
   TYPOGRAPHY
-  Headlines:  Plus Jakarta Sans 800 — geometric, authoritative, modern
-  Labels:     Space Mono — precise, data-feel
-  Body:       DM Sans — clean, human, readable
-
-  TONE
-  Clear, confident. Respects the customer's intelligence.
-  Names the problem, then presents the solution.
-  "This is what's broken. This is what we built."
-
-  LAYOUT RULES
-  - Full-height single page, vertically centred hero
-  - Stat panel: glass-card style, border rgba(110,174,255,0.2)
-  - Bottom band: solid navy, Space Mono label text
-  - Electric blue used ONLY for: key word emphasis, CTAs, stat numbers, arrows
+  Headlines:  Plus Jakarta Sans 800
+  Labels:     Space Mono
+  Body:       DM Sans
   ════════════════════════════════════════════════
 */
 
@@ -49,9 +37,7 @@
   --border:   rgba(110,174,255,0.15);
 }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   background: var(--midnight);
@@ -62,7 +48,6 @@ body {
   flex-direction: column;
 }
 
-/* ── GLOW EFFECTS ── */
 body::before {
   content: '';
   position: fixed;
@@ -99,17 +84,16 @@ nav {
 .logo {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
+  font-size: 20px;
   color: var(--light);
   letter-spacing: -0.5px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
-.logo-top { font-size: 20px; color: var(--light); }
-.logo-top span { color: var(--blue); }
-.logo-bottom { font-size: 20px; color: var(--light); }
+.logo .up { color: var(--blue); }
 
 .contact {
   font-family: 'Space Mono', monospace;
@@ -143,36 +127,14 @@ main {
   width: 100%;
 }
 
-.hero-left {}
-
-.eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.eyebrow::before {
-  content: '';
-  width: 24px;
-  height: 2px;
-  background: var(--blue);
-  flex-shrink: 0;
-}
-
 h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(36px, 5.5vw, 70px);
+  font-size: clamp(32px, 5vw, 62px);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -2.5px;
+  line-height: 1.06;
+  letter-spacing: -2px;
   color: var(--light);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 h1 em {
@@ -188,22 +150,33 @@ h1 em {
   margin: 0 auto;
 }
 
-/* ── STAT PANEL ── */
+/* ── STAT PANELS ── */
+.stats-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .stat-panel {
   background: rgba(110,174,255,0.06);
   border: 1px solid rgba(110,174,255,0.2);
   border-radius: 20px;
-  padding: 40px 32px;
+  padding: 36px 44px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  flex: 1;
+  min-width: 220px;
+  max-width: 340px;
 }
 
 .stat-panel::before {
   content: '';
   position: absolute;
   top: -60px; right: -60px;
-  width: 180px; height: 180px;
+  width: 160px; height: 160px;
   background: radial-gradient(circle, rgba(110,174,255,0.15) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
@@ -211,7 +184,7 @@ h1 em {
 
 .stat-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(48px, 7vw, 80px);
+  font-size: clamp(40px, 6vw, 72px);
   font-weight: 800;
   color: var(--blue);
   line-height: 1;
@@ -237,80 +210,98 @@ h1 em {
   z-index: 1;
 }
 
-/* ── BOTTOM BAND ── */
+/* ── FOOTER CTA ── */
 footer {
   position: relative;
   z-index: 10;
   background: var(--navy);
   border-top: 1px solid var(--border);
-  padding: 28px 56px;
+  padding: 32px 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 }
 
-.footer-text {
+.footer-cta-label {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(15px, 2vw, 20px);
-  font-weight: 700;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 800;
   letter-spacing: -0.3px;
   color: var(--light);
 }
 
-.footer-text em {
-  font-style: normal;
-  color: var(--blue);
+.footer-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+  flex-shrink: 0;
 }
+
+.footer-email {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(12px, 1.2vw, 15px);
+  color: var(--blue);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s;
+}
+
+.footer-email:hover { opacity: 0.75; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 20px 28px; }
   main { padding: 48px 28px; }
-  .stat-panel { max-width: 320px; }
-  footer { padding: 20px 28px; flex-wrap: wrap; text-align: center; }
+  footer { padding: 24px 28px; flex-direction: column; gap: 12px; text-align: center; }
+  .footer-divider { width: 40px; height: 1px; }
 }
 
 @media (max-width: 480px) {
   nav { padding: 16px 20px; }
   main { padding: 40px 20px; }
-  footer { padding: 18px 20px; }
-  .footer-text { font-size: 9px; letter-spacing: 1px; }
+  footer { padding: 20px; }
+  .stats-row { flex-direction: column; align-items: center; }
+  .stat-panel { max-width: 100%; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="/" class="logo">
-    <span class="logo-top">Build<span>Up</span></span>
-    <span class="logo-bottom">Credit</span>
+    <span>Build<span class="up">Up</span></span>
+    <span>Credit</span>
   </a>
   <a href="mailto:hello@buildupcredit.co.uk" class="contact">hello@buildupcredit.co.uk</a>
 </nav>
 
-<!-- HERO -->
 <main>
   <div class="hero">
-
-    <div class="hero-left">
-      <h1>Debt shouldn't be<br>a one-way door.<br><em>We built the exit.</em></h1>
+    <div>
+      <h1>Giving subprime borrowers<br>financial freedom.<br><em>We transform borrowers into savers.</em></h1>
       <p class="sub">The subprime credit market is broken. Millions use high-cost credit due to lack of savings, and never graduate to prime credit. BuildUp Credit changes the equation. Every repayment is a step towards financial freedom.</p>
     </div>
 
-    <div class="stat-panel">
-      <div class="stat-number">1 in 4</div>
-      <div class="stat-divider"></div>
-      <div class="stat-label">adults with low financial resilience in the UK</div>
+    <div class="stats-row">
+      <div class="stat-panel">
+        <div class="stat-number">1 in 4</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">adults with low financial resilience in the UK</div>
+      </div>
+      <div class="stat-panel">
+        <div class="stat-number">£2bn</div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">unmet credit needs</div>
+      </div>
     </div>
-
   </div>
 </main>
 
-<!-- BOTTOM BAND -->
 <footer>
-  <div class="footer-text">Credit products that build the life after high cost debt — <em>Coming soon</em></div>
+  <div class="footer-cta-label">Get in touch</div>
+  <div class="footer-divider"></div>
+  <a href="mailto:hello@buildupcredit.co.uk" class="footer-email">hello@buildupcredit.co.uk</a>
 </footer>
 
 </body>
